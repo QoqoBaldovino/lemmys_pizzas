@@ -18,6 +18,9 @@ const cartSlice = createSlice({
     },
 
     deleteProduct: (state, action) => {
+      console.log(action.payload)
+      console.log(action.payload.newCart)
+      
       state.products = [];
       state.products.push(action.payload.newCart)
       state.quantity -= 1;
