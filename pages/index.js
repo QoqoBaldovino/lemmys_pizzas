@@ -9,7 +9,7 @@ import Add from '../components/Add'
 import AddButton from '../components/AddButton'
 
 export default function Home({pizzaList, admin}) {
-  console.log(admin)
+  
   const [close, setClose] = useState(true);
   
   return (
@@ -35,7 +35,7 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get("https://lemmys-pizzas.vercel.app/api/products");
   return {
     props: {
       pizzaList: res.data,

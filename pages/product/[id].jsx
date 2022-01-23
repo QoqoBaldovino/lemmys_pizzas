@@ -97,7 +97,7 @@ const Product = ({pizza}) => {
 export default Product;
 
 export const getServerSideProps = async ({params}) => {
-  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+  const res = await axios.get(`https://lemmys-pizzas.vercel.app/api/products/${params.id}`);
 
   return {
     props: {

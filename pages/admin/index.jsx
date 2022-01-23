@@ -13,7 +13,7 @@ const Index = ({orders, products}) => {
     
     try {
       const res = await axios.delete(
-        "http://localhost:3000/api/products/" + id
+        "https://lemmys-pizzas.vercel.app/api/products/" + id
       );
       setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
     } catch (err) {
@@ -26,7 +26,7 @@ const Index = ({orders, products}) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("http://localhost:3000/api/orders/" + id, {
+      const res = await axios.put("https://lemmys-pizzas.vercel.app/api/orders/" + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -131,8 +131,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get("http://localhost:3000/api/products");
-  const orderRes = await axios.get("http://localhost:3000/api/orders");
+  const productRes = await axios.get("https://lemmys-pizzas.vercel.app/api/products");
+  const orderRes = await axios.get("https://lemmys-pizzas.vercel.app/api/orders");
 
   return {
     props: {
