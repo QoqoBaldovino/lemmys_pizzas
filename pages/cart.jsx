@@ -18,7 +18,7 @@ const Cart = () => {
  
   const cart = useSelector(state => state.cart);
 
-  const [newCart, setNewCart] = useState([])
+  const [newCart, setNewCart] = useState({})
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false)
   const amount = cart.total;
@@ -54,6 +54,7 @@ const Cart = () => {
   const deletePizza = (product) => {
 
     const newCartAux = cart.products.filter((pizza) => pizza !== product)
+    console.log(newCart)
     setNewCart(newCartAux)
     const deleteCart = cart.products.filter((pizza) => pizza === product)
     const deleteCartPrice = deleteCart[0].price;
