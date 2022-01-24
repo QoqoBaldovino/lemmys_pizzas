@@ -51,16 +51,9 @@ const Cart = () => {
 
 
 
-  const deletePizza = (product) => {
+  const deleteOrder = () => {
 
-    const newCartAux = cart.products.filter((pizza) => pizza != product)
-    const deleteCart = cart.products.filter((pizza) => pizza === product)
-    const deleteCartPrice = deleteCart[0].price;
-    console.log("newCartAux:", newCartAux)
-    setNewCart(1);
-    console.log("newCart:", newCart);
- 
-    dispatch(deleteProduct({newCart, deleteCartPrice}))
+    dispatch(reset());
 
   }
 
@@ -104,9 +97,6 @@ const Cart = () => {
         </td>
         <td>
           <span className={styles.total}>${product.price * product.quantity}</span>
-        </td>
-        <td>
-          <button onClick = {() => deletePizza(product)} className={styles.productDelete}>X</button>
         </td>
         </tr>
         
@@ -207,6 +197,7 @@ const Cart = () => {
           </div>
           {open ? (
             <div className={styles.paymentMethods}>
+              <button onClick = {() => deleteOrder}className={styles.buttonDelete}>Borrar Orden</button>
               <button className={styles.payButton} onClick = {() => setCash(true)}>CASH ON DELIVERY</button>
              <PayPalScriptProvider
                 options={{
