@@ -53,7 +53,8 @@ const Cart = () => {
 
   const deletePizza = (product) => {
 
-    const newCartAux = cart.products.filter((pizza) => pizza !== product)
+    const newCartAux = cart.products.filter((pizza) => console.log("pizza", pizza))
+    console.log("product; ",product)
     console.log(newCart)
     setNewCart(newCartAux)
     const deleteCart = cart.products.filter((pizza) => pizza === product)
