@@ -49,18 +49,6 @@ const Cart = () => {
   }
 
 
-
-
-  const deleteOrder = () => {
-
-    dispatch(reset());
-
-  }
-
-
-
-
-
   const OrderList = ({cart}) => {
     
     
@@ -217,7 +205,7 @@ const Cart = () => {
             </div>
           ) : (<>
           <button onClick = {() => setOpen(true)} className={styles.button}>REALIZAR COMPRA</button>
-          <button onClick = {dispatch(reset())}className={styles.buttonDelete}>BORRAR ORDEN</button></>)}
+         </>)}
 
         </div>
       </div>
