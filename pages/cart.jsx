@@ -57,7 +57,7 @@ const Cart = () => {
     const deleteCart = cart.products.filter((pizza) => pizza === product)
     const deleteCartPrice = deleteCart[0].price;
     console.log("newCartAux:", newCartAux)
-    setNewCart(newCartAux)
+    setNewCart(newCartAux[0]);
     console.log("newCart:", newCart);
  
     dispatch(deleteProduct({newCart, deleteCartPrice}))
