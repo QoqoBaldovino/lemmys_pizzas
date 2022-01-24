@@ -195,10 +195,11 @@ const Cart = () => {
           <div className={styles.totalText}>
             <b className={styles.totalTextTitle}>Total:</b>${cart.total}
           </div>
+           
           {open ? (
             <div className={styles.paymentMethods}>
-              <button onClick = {() => deleteOrder}className={styles.buttonDelete}>Borrar Orden</button>
-              <button className={styles.payButton} onClick = {() => setCash(true)}>CASH ON DELIVERY</button>
+             
+              <button className={styles.payButton} onClick = {() => setCash(true)}>PAGAR AL DELIVERY</button>
              <PayPalScriptProvider
                 options={{
                      "client-id": "AV6tCLPT3yoekdBO7tSsACqC2kehxAeZR5br8qPKK8yPO7ORQlznbg6SysAF4zQ4KiHdQ3g2wb5CoUsM",
@@ -214,7 +215,9 @@ const Cart = () => {
 
              </PayPalScriptProvider>
             </div>
-          ) : (<button onClick = {() => setOpen(true)} className={styles.button}>CHECKOUT NOW!</button>)}
+          ) : (<>
+          <button onClick = {() => setOpen(true)} className={styles.button}>CHECKOUT NOW!</button>
+          <button onClick = {() => deleteOrder}className={styles.buttonDelete}>Borrar Orden</button></>)}
 
         </div>
       </div>
