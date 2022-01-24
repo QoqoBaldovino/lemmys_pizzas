@@ -216,8 +216,8 @@ const Cart = () => {
              </PayPalScriptProvider>
             </div>
           ) : (<>
-          <button onClick = {() => setOpen(true)} className={styles.button}>CHECKOUT NOW!</button>
-          <button onClick = {() => deleteOrder}className={styles.buttonDelete}>Borrar Orden</button></>)}
+          <button onClick = {() => setOpen(true)} className={styles.button}>REALIZAR COMPRA</button>
+          <button onClick = {dispatch(reset())}className={styles.buttonDelete}>BORRAR ORDEN</button></>)}
 
         </div>
       </div>
